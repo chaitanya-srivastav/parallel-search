@@ -6,7 +6,7 @@ import grequests
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def search_word():
     searchword = request.args.get('q', '')
     resp = {'query': searchword, 'results': {'google': {}, 'duckduckgo': {}, 'twitter': {}}}
     header = {'Authorization': 'Bearer ' + os.environ['TOKEN']}
